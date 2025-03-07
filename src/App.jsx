@@ -32,15 +32,15 @@ function App() {
   };
 
   return (
-    <div className="bg-[rgb(4,4,25)] h-[100vh] w-[100vw] flex justify-center items-center text-white">
-      <div className="w-[350px] bg-[#610bb2] p-5 shadow-lg shadow-[#808080a2]">
+    <div className="bg-[rgb(7,5,48)] h-[100vh] w-[100vw] flex justify-center items-center text-white">
+      <div className="min-w-[350px] bg-[#610bb2] p-5 shadow-xl shadow-[#feffaf89] rounded-sm">
         <h2 className="text-center font-bold text-2xl mb-3">
           Password Generator
         </h2>
         <div className="flex justify-between">
           <input
             type="text"
-            className="mr-0.5 w-[80%] bg-white text-black"
+            className="mr-0.5 w-[80%] bg-white text-black p-2"
             readOnly
             value={fPass}
           />
@@ -96,7 +96,7 @@ function App() {
         </div>
         <div className="flex justify-center">
           <button
-            className="bg-white text-lg text-black py-2.5 w-full cursor-pointer"
+            className="bg-white text-lg text-black py-2.5 w-full cursor-pointer hover:bg-[rgb(7,5,48)] hover:text-white duration-300 shadow-lg shadow-[#0000008f]"
             onClick={createPassword}
           >
             Generate Password
