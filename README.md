@@ -1,12 +1,68 @@
-# React + Vite
+# Password Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple password generator built with React that allows users to generate strong passwords based on selected criteria.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Generate passwords with customizable options
+- Include uppercase, lowercase, numbers, and special characters
+- Copy generated password to clipboard
+- Adjustable password length (default: 10, max: 20)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/password-generator.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd password-generator
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+## Usage
+
+1. Start the development server:
+   ```sh
+   npm start
+   ```
+2. Open the app in the browser:
+   ```
+   http://localhost:3000
+   ```
+3. Select the desired password criteria and click the **Generate Password** button.
+4. Click **Copy** to copy the generated password to the clipboard.
+
+## Project Structure
+
+```
+password-generator/
+├── src/
+│   ├── components/
+│   ├── data/
+│   │   ├── PassChar.js
+│   ├── App.js
+│   ├── index.js
+│   ├── styles.css
+├── public/
+│   ├── index.html
+├── package.json
+├── README.md
+```
+
+## Dependencies
+
+- React
+- Tailwind CSS
+
+## Customization
+
+Modify the `PassChar.js` file inside the `data` directory to customize the character sets used for password generation.
+
+## License
+
+This project is open-source and available under the MIT License.
