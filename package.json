@@ -14,8 +14,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.12",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.5",
     "tailwindcss": "^4.0.12"
   },
   "devDependencies": {

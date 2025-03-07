@@ -1,19 +1,24 @@
 # Password Generator
 
-A simple password generator built with React that allows users to generate strong passwords based on selected criteria.
+A simple password generator built with React that allows users to generate random passwords with customizable options. The UI includes a background particle effect for an enhanced visual experience.
 
 ## Features
-
-- Generate passwords with customizable options
-- Include uppercase, lowercase, numbers, and special characters
+- Generate random passwords with customizable length
+- Options to include uppercase, lowercase, numbers, and special characters
 - Copy generated password to clipboard
-- Adjustable password length (default: 10, max: 20)
+- Toast notifications for feedback (password generation & copy success)
+- Interactive UI with particle effects
+
+## Technologies Used
+- React
+- Tailwind CSS
+- tsparticles (for background effects)
+- react-toastify (for notifications)
 
 ## Installation
-
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/password-generator.git
+   git clone https://github.com/yourusername/password-generator.git
    ```
 2. Navigate to the project directory:
    ```sh
@@ -25,44 +30,29 @@ A simple password generator built with React that allows users to generate stron
    ```
 
 ## Usage
-
 1. Start the development server:
    ```sh
    npm start
    ```
-2. Open the app in the browser:
-   ```
-   http://localhost:3000
-   ```
-3. Select the desired password criteria and click the **Generate Password** button.
-4. Click **Copy** to copy the generated password to the clipboard.
+2. Open your browser and visit `http://localhost:3000`
+3. Customize your password options and generate a strong password!
 
 ## Project Structure
-
 ```
 password-generator/
-├── src/
+│── src/
 │   ├── components/
 │   ├── data/
-│   │   ├── PassChar.js
-│   ├── App.js
-│   ├── index.js
-│   ├── styles.css
-├── public/
-│   ├── index.html
-├── package.json
-├── README.md
+│   │   ├── PassChar.js  # Character sets for password generation
+│   ├── utils/
+│   │   ├── useParticles.js  # Particle effect configuration
+│   ├── App.js  # Main application file
+│   ├── index.js  # Entry point
+│── public/
+│── package.json
+│── README.md
 ```
 
-## Dependencies
-
-- React
-- Tailwind CSS
-
-## Customization
-
-Modify the `PassChar.js` file inside the `data` directory to customize the character sets used for password generation.
-
 ## License
-
 This project is open-source and available under the MIT License.
+

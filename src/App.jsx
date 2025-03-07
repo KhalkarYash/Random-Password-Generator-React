@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { NC, SC, UC, LC } from "./data/PassChar";
+import Particles from "@tsparticles/react";
+import useParticles from "./utils/useParticles";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   let [upperCase, setUpperCase] = useState(false);
@@ -22,29 +25,49 @@ function App() {
         finalPass += charSet.charAt(Math.floor(Math.random() * charSet.length));
       }
       setFPass(finalPass);
+      toast("Password generated successfully!", {
+        type: "success",
+        closeOnClick: false,
+      });
     } else {
-      alert("Please select atleast checkbox");
+      toast("Please select atleast one checkbox!", {
+        type: "error",
+        closeOnClick: false,
+      });
     }
   };
 
   let copyPass = () => {
     navigator.clipboard.writeText(fPass);
+    toast("Text copied successfully!", { type: "success", closeOnClick: true });
   };
 
+  const { options, particlesLoaded } = useParticles();
+
   return (
-    <div className="bg-[rgb(7,5,48)] h-[100vh] w-[100vw] flex justify-center items-center text-white">
-      <div className="min-w-[350px] bg-[#610bb2] p-5 shadow-xl shadow-[#feffaf89] rounded-sm">
+    <>
+      <ToastContainer theme="dark" />◘
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+        className="absolute top-0 left-0 w-full h-full -z-10"
+      />
+      <div className="z-10 m-auto mt-[10%] w-[350px] bg-[#610bb2] p-5 shadow-xl shadow-[#feffaf89] rounded-sm">
         <h2 className="text-center font-bold text-2xl mb-3">
           Password Generator
         </h2>
         <div className="flex justify-between">
           <input
             type="text"
-            className="mr-0.5 w-[80%] bg-white text-black p-2"
+            className="w-[80%] bg-[#ecd7ff] text-black p-2"
             readOnly
             value={fPass}
           />
-          <button className="w-[20%] bg-white text-black" onClick={copyPass}>
+          <button
+            className="w-[20%] bg-white text-black hover:bg-[rgb(7,5,48)] hover:text-white duration-300 shadow-md shadow-[#0000008f]"
+            onClick={copyPass}
+          >
             Copy
           </button>
         </div>
@@ -52,7 +75,7 @@ function App() {
           <label className="w-[80%]">Password Length</label>
           <input
             type="number"
-            className="w-[15%] text-black p-1 bg-white"
+            className="w-[15%] text-black p-1 bg-[#ecd7ff]"
             value={passwordLength}
             onChange={(e) => setPasswordLength(e.target.value)}
             max={20}
@@ -103,7 +126,7 @@ function App() {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
